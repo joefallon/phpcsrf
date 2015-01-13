@@ -1,0 +1,154 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "acee50e9cdfb77f4b645432ebd72d1f7",
+    "packages": [
+        {
+            "name": "joefallon/phpsession",
+            "version": "v2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/joefallon/phpsession.git",
+                "reference": "faa692eb64674a0a103c2983cebdeb004a48034a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/joefallon/phpsession/zipball/faa692eb64674a0a103c2983cebdeb004a48034a",
+                "reference": "faa692eb64674a0a103c2983cebdeb004a48034a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "joefallon/kisstest": "~1.0",
+                "joefallon/phpautoloader": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "JoeFallon": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joe Fallon",
+                    "email": "joseph.t.fallon@gmail.com",
+                    "homepage": "http://blog.joefallon.net"
+                }
+            ],
+            "description": "phpsession",
+            "homepage": "https://github.com/joefallon/phpsession",
+            "keywords": [
+                "php"
+            ],
+            "time": "2014-12-09 19:06:07"
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "joefallon/kisstest",
+            "version": "v1.1.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/joefallon/kisstest.git",
+                "reference": "0a9523e1851a3951fd6ee7aa6ba40b4d3a22568f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/joefallon/kisstest/zipball/0a9523e1851a3951fd6ee7aa6ba40b4d3a22568f",
+                "reference": "0a9523e1851a3951fd6ee7aa6ba40b4d3a22568f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "joefallon/phpautoloader": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "JoeFallon": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joe Fallon",
+                    "email": "joseph.t.fallon@gmail.com",
+                    "homepage": "http://blog.joefallon.net"
+                }
+            ],
+            "description": "KissTest is a gorgeous and fast unit testing framework for PHP that does not require use of the command line.",
+            "homepage": "https://github.com/joefallon/kisstest",
+            "keywords": [
+                "test",
+                "unit-test",
+                "xunit"
+            ],
+            "time": "2015-01-07 19:40:36"
+        },
+        {
+            "name": "joefallon/phpautoloader",
+            "version": "v2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/joefallon/phpautoloader.git",
+                "reference": "79284475b671923f91f1af9286204b3821b08298"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/joefallon/phpautoloader/zipball/79284475b671923f91f1af9286204b3821b08298",
+                "reference": "79284475b671923f91f1af9286204b3821b08298",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "JoeFallon": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joe Fallon",
+                    "email": "joseph.t.fallon@gmail.com",
+                    "homepage": "http://blog.joefallon.net/",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "Joe's simple to use and versatile PHP autoloader.",
+            "homepage": "https://github.com/joefallon/phpautoloader",
+            "keywords": [
+                "Simple",
+                "autoloader",
+                "namespace",
+                "psr-0"
+            ],
+            "time": "2014-12-28 15:32:10"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.3.0"
+    },
+    "platform-dev": []
+}
