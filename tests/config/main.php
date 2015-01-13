@@ -12,3 +12,4 @@ set_include_path(get_include_path().':'.SRC_PATH.':'.BASE_PATH);
 require(VEND_PATH.'/autoload.php');
 
 AutoLoader::registerAutoLoad();
+ 
