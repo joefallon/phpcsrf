@@ -6,17 +6,6 @@ use InvalidArgumentException;
 use JoeFallon\PhpSession\Session;
 
 /**
- * To use this class perform the following:
- *
- * 1.   Construct the class and pass in the name of the form and the
- *      session object.
- *
- * 2.   Call generateToken() and store the return value in a hidden form
- *      field called csrf.
- *
- * 3.   On post, pass the value of the csrf field into validateToken. If true
- *      is returned, then CSRF has not occurred.
- *
  * @author    Joseph Fallon <joseph.t.fallon@gmail.com>
  * @copyright Copyright 2014 Joseph Fallon (All rights reserved)
  * @license   MIT
@@ -33,7 +22,7 @@ class CsrfGuard
      * @param string  $formName
      * @param Session $session
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function __construct($formName, Session $session)
     {
@@ -69,12 +58,12 @@ class CsrfGuard
 
 
     /**
-     * @param $token
+     * @param string $token
      * @throws Exception
      *
      * @return boolean
      */
-    public function validateToken($token)
+    public function isValidToken($token)
     {
         $token = strval($token);
         
