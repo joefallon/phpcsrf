@@ -1,5 +1,7 @@
 # phpcsrf
 
+By [Joe Fallon](http://blog.joefallon.net)
+
 A simple library for cross-site request forgery (CSRF) prevention in PHP. It has the 
 following features:
 
