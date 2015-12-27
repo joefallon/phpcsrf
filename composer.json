@@ -14,11 +14,11 @@
   ],
   "require": {
     "php": ">=5.3.0",
-    "joefallon/phpsession": "~3.0"
+    "joefallon/phpsession": "^4.0"
   },
   "require-dev": {
-    "joefallon/phpautoloader": "~2.0",
-    "joefallon/kisstest": "~1.0"
+    "joefallon/phpautoloader": "^2.0",
+    "joefallon/kisstest": "^2.0"
   },
   "autoload": {
     "psr-0":
