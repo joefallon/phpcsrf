@@ -8,6 +8,7 @@ following features:
 *   Full suite of unit tests.
 *   It can be integrated into any existing project.
 *   Can be fully understood in just a few moments.
+*   Uses a cryptographically secure randomly generated token.
 
 ## Installation
 
@@ -30,8 +31,8 @@ and run the `php composer.phar install` command to install it.
 Create the form token.
 
 ```php
-$sess = new Session();
-$csrf = new CsrfGuard('form-name', $sess);
+$session = new Session();
+$csrf = new CsrfGuard('form-name', $session);
 $csrf->generateToken();
 ```
 
@@ -44,7 +45,7 @@ Then, store the form token in the form.
 ### Validate a Form Token
 
 ```php
-$sess = new Session();
-$csrf = new CsrfGuard('form-name', $sess);
+$session = new Session();
+$csrf = new CsrfGuard('form-name', $session);
 $csrf->isValidToken('55517f7944ee117160414b601a15e60e1076f5b4');
 ```

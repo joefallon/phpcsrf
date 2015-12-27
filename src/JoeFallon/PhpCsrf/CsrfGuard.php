@@ -5,18 +5,12 @@ use Exception;
 use InvalidArgumentException;
 use JoeFallon\PhpSession\Session;
 
-/**
- * @author    Joseph Fallon <joseph.t.fallon@gmail.com>
- * @copyright Copyright 2014 Joseph Fallon (All rights reserved)
- * @license   MIT
- */
 class CsrfGuard
 {
     /** @var string */
     protected $_formName;
     /** @var Session */
     protected $_session;
-
 
     /**
      * @param string  $formName
@@ -27,38 +21,43 @@ class CsrfGuard
     public function __construct($formName, Session $session)
     {
         $formName = strval($formName);
-        
+
         if(strlen($formName) == 0)
         {
             $msg = 'An empty form name is not allowed.';
             throw new InvalidArgumentException($msg);
         }
-        
+
         $this->_formName = $formName;
-        $this->_session  = $session;
+        $this->_session = $session;
     }
-    
-    
+
+
     /**
      * @return string
+     * @throws Exception
      */
     public function generateToken()
     {
-        $bytes = mcrypt_create_iv(22, MCRYPT_DEV_URANDOM);
-        $b64 = base64_encode($bytes);
-        
-        $token  = hash('sha1', $b64);
-        $sess   = $this->_session;
-        $key    = $this->_formName;
-        
-        $sess->write($key, $token);
-        
+        $isSecure = false;
+        $token = (string)bin2hex(openssl_random_pseudo_bytes(32, $isSecure));
+
+        if(!$isSecure)
+        {
+            throw new Exception("Random value algorithm was not secure.");
+        }
+
+        $session = $this->_session;
+        $key = $this->_formName;
+        $session->write($key, $token);
+
         return $token;
     }
 
 
     /**
      * @param string $token
+     *
      * @throws Exception
      *
      * @return boolean
@@ -66,28 +65,28 @@ class CsrfGuard
     public function isValidToken($token)
     {
         $token = strval($token);
-        
+
         if(strlen($token) == 0)
         {
             $msg = 'The token cannot be empty.';
             throw new Exception($msg);
         }
-        
-        $sess      = $this->_session;
-        $key       = $this->_formName;
-        $sessToken = $sess->read($key);
-        $sess->unsetSessionValue($key);
-        
-        if($sessToken == false || strlen($sessToken) == 0)
+
+        $session = $this->_session;
+        $key = $this->_formName;
+        $sessionToken = $session->read($key);
+        $session->unsetSessionValue($key);
+
+        if(empty($sessionToken))
         {
             return false;
         }
-        
-        if($sessToken === $token)
+
+        if($sessionToken === $token)
         {
             return true;
         }
-        
+
         return false;
     }
 }
